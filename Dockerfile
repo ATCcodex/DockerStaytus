@@ -8,9 +8,8 @@ ENV DEBIAN_FRONTEND="noninteractive"
 RUN apt-get -q update && \
     apt-get -q install -y nodejs libgmp3-dev mysql-client && \
     mkdir -p /opt/staytus && \
-    git clone https://github.com/adamcooke/staytus /opt/staytus && \
+    git clone https://github.com/adamcooke/staytus/tree/stable /opt/staytus && \
     cd /opt/staytus && \
-    git checkout stable && \
     bundle update json && \
     bundle install --deployment --without development:test && \
     apt-get clean && \

@@ -15,8 +15,8 @@ RUN apt-get -q update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh entrypoint.sh
 
 EXPOSE 5000
 
-ENTRYPOINT "/entrypoint.sh"
+ENTRYPOINT "entrypoint.sh"
